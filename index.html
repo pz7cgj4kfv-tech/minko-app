@@ -29,15 +29,24 @@ a.bouton small{display:block;font-weight:600;font-size:13.5px;opacity:.9;margin-
 .note{font-size:14px;color:var(--gris);margin-top:10px}
 footer{border-top:1px solid #EEE3EA;text-align:center;padding:24px 20px 40px;font-size:14px;color:var(--gris)}
 footer a{color:var(--prune)}
+.langue{position:absolute;top:14px;right:14px;display:flex;gap:6px}
+.langue button{border:1.5px solid rgba(255,255,255,.6);background:transparent;color:#fff;border-radius:999px;padding:5px 12px;font-weight:800;font-size:13px;cursor:pointer}
+.langue button[aria-pressed="true"]{background:#fff;color:var(--prune)}
+header{position:relative}
+html[lang="fr"] [lang="en"]{display:none}
+html[lang="en"] [lang="fr"]{display:none}
 </style>
 </head>
 <body>
 <header>
   <img class="icone" src="icone.png" alt="">
   <div class="mot"><svg aria-label="Minko" role="img" width="240" height="60" viewBox="140 228 552 138" style="display:inline-block;vertical-align:middle;flex-shrink:0"><g fill="#EB6BAF"><path d="M144.691,266.045h24.636v16.946h0.521c3.931-11.269,13.976-18.693,26.729-18.693c13.54,0,22.973,6.987,26.119,19.216h0.523c4.194-11.792,15.375-19.216,29.088-19.216c18.344,0,30.659,12.578,30.659,31.445v63.941h-25.506v-57.563c0-10.833-5.416-16.771-15.286-16.771c-9.696,0-16.072,7.075-16.072,17.469v56.866h-24.546v-58.351c0-10.045-5.679-15.984-15.112-15.984c-9.696,0-16.247,7.337-16.247,17.819v56.516h-25.507V266.045z"></path><path d="M308.498,266.045h25.508v93.639h-25.508z"></path><path d="M359.891,266.045h24.634v16.683h0.523c4.979-11.618,14.85-18.43,29.263-18.43c20.791,0,32.495,13.103,32.495,35.028v60.358H421.3v-55.031c0-12.229-5.765-19.217-17.208-19.217s-18.693,8.386-18.693,20.528v53.721h-25.508V266.045z"></path><path d="M530.165,266.045h28.916l-35.729,40.181l37.474,53.458h-29.349L504.659,321.6l-6.637,7.163v30.922h-25.507V233.637h25.507v69.968h0.349L530.165,266.045z"></path><path d="M615.458,257.396l0.606-23.175c-26.405,4.308-43.643,23.196-47.189,51.905l26.832-0.615C598.223,271.633,605.249,261.733,615.458,257.396z"></path><path d="M640.229,337.628l-0.734,23.158c26.511-4.127,43.947-22.892,47.652-51.475l-26.947,0.675C657.584,323.712,650.502,333.452,640.229,337.628z"></path><path d="M588.371,324.63L610.524,346.781L616.525,340.781L616.948,324.007z"></path><path d="M670.22,273.308L638.9,273.986L638.578,287.007L671.108,286.197L677.109,280.198z"></path></g><g fill="#77BC1F"><path d="M673.519,291.815l11.62-11.616l-39.755-39.75l-11.616,11.616l-0.876,35.166l-9.36,0.313l0.936-37.582c0.03-1.2,0.518-2.342,1.369-3.189l16.241-16.245c1.827-1.827,4.788-1.827,6.614,0l46.366,46.365c1.825,1.824,1.825,4.786,0,6.611l-16.246,16.249c-0.85,0.848-1.99,1.335-3.188,1.364l-93.233,2.325l-11.616,11.618l39.753,39.749l11.617-11.619l0.872-34.956l9.359-0.153l-0.928,37.214c-0.029,1.201-0.519,2.34-1.369,3.192l-16.245,16.243c-1.825,1.824-4.785,1.824-6.612,0l-46.366-46.364c-1.826-1.827-1.826-4.787,0-6.616l16.246-16.243c0.848-0.848,1.988-1.34,3.189-1.369L673.519,291.815z"></path></g></svg></div>
-  <p>Les gens libres en même temps que toi, près de toi. Un vrai moment, pas un fil.</p>
+  <div class="langue"><button type="button" data-l="fr">FR</button><button type="button" data-l="en">EN</button></div>
+  <p lang="fr">Les gens libres en même temps que toi, près de toi. Un vrai moment, pas un fil.</p>
+  <p lang="en">People who are free at the same time as you, near you. A real moment, not a feed.</p>
 </header>
 <main>
+<div lang="fr">
   <p>Minko montre les personnes libres en même temps que toi, près de toi, maintenant ou dans les heures qui viennent. Tu ouvres un créneau, tu vois qui partage ce temps, tu envoies une étincelle. Si elle est réciproque, un speed chat de quelques minutes démarre, puis chacun décide en secret de se voir, de continuer ou de s’arrêter.</p>
   <p>Pas de boîte de réception, pas de messages la nuit, pas de défilement sans fin. Un rendez-vous se fixe dans un lieu public, à mi-chemin. Ta position n’est jamais montrée, seulement une zone en mots.</p>
 
@@ -65,11 +74,60 @@ footer a{color:var(--prune)}
   <p>Minko arrivera sur l’App Store et sur Google Play. À ce moment-là, plus besoin de TestFlight ni de fichier à télécharger : l’app s’installe et se met à jour comme toutes les autres. <b>Ton compte est gardé</b> : il vit sur nos serveurs, pas dans ton téléphone. Tu retrouves ton profil en te reconnectant avec ton numéro.</p>
   <p class="note">Sur Android, au moment du passage à Google Play, il faudra peut-être supprimer l’app actuelle une fois avant d’installer celle du store. On te le dira le moment venu.</p>
   <p class="note">18 ans et plus. Suisse pour l’instant.</p>
+</div>
+<div lang="en">
+  <p>Minko shows you the people who are free at the same time as you, near you, right now or in the next few hours. You open a time slot, you see who shares that time, you send a spark. If it is mutual, a speed chat of a few minutes starts, then each of you decides in secret to meet, to keep talking or to stop.</p>
+  <p>No inbox, no messages at night, no endless scrolling. A meetup is set in a public place, halfway between you. Your location is never shown, only an area in words.</p>
+
+  <h2>How it works</h2>
+  <div class="etapes">
+    <div class="etape"><b>1. You open a time slot</b>The time when you are free, and how far you are willing to go.</div>
+    <div class="etape"><b>2. You see who is free</b>The people whose time overlaps yours. A spark, and if it is mutual, you talk.</div>
+    <div class="etape"><b>3. You decide</b>After the speed chat, each of you chooses in secret. If you both want to meet, Minko suggests a public place halfway.</div>
+  </div>
+
+  <h2>Download Minko</h2>
+  <p>Minko is being tested in Lausanne. Join the pilot group.</p>
+  <div class="boutons">
+    <a class="bouton ios" href="https://testflight.apple.com/join/36S7jJgg">iPhone<small>Test version, through Apple’s TestFlight app</small></a>
+    <a class="bouton android" href="https://github.com/pz7cgj4kfv-tech/clutch-apk/releases/download/apk-v3-latest/clutch-v3-latest.apk">Android<small>Direct install file</small></a>
+  </div>
+  <h2>Install, step by step</h2>
+  <div class="etapes">
+    <div class="etape"><b>iPhone</b>1. Install the TestFlight app from the App Store.<br>2. Tap the iPhone button above.<br>3. Tap “Accept”, then “Install”.<br>If TestFlight asks for a code, you do not need one. Close TestFlight and tap the button again.<br><br><b>Updates</b>TestFlight takes care of them. Turn on “Automatic Updates” in TestFlight, on Minko’s page.</div>
+    <div class="etape"><b>Android</b>1. Tap the Android button above, in Chrome.<br>2. Open the downloaded file.<br>3. If the installation is blocked, tap “Settings” and turn on “Allow from this source”, then go back.<br>4. Tap “Install”. If Play Protect shows “Unknown app”, tap “More details”, then “Install anyway”.<br><br><b>Updates</b>Until Minko is on Google Play, the app does not update itself. When a new version comes out, tap the same button again and install over the old one. Your account and settings stay. Your version is written at the bottom of your Profile.<br><br><b>Installed before 24 October?</b>First delete the old app (it may have been called Clutch), just once, then install the new one. Your account stays, it lives on our servers. Sign in again with your phone number.</div>
+  </div>
+  <p class="note">Then open Minko, enter your phone number and the code you receive by text message.</p>
+
+  <h2>And later?</h2>
+  <p>Minko will come to the App Store and Google Play. From then on, no more TestFlight or file to download. The app installs and updates like any other. <b>Your account is kept.</b> It lives on our servers, not on your phone. You get your profile back by signing in with your phone number.</p>
+  <p class="note">On Android, when Minko moves to Google Play, you may need to delete the current app once before installing the one from the store. We will tell you when the time comes.</p>
+  <p class="note">18 and over. Switzerland for now.</p>
+</div>
 </main>
 <footer>
   <a href="mailto:contact@minko-app.ch">contact@minko-app.ch</a> ·
-  <a href="https://pz7cgj4kfv-tech.github.io/v3/confidentialite">Confidentialité</a> ·
-  <a href="https://pz7cgj4kfv-tech.github.io/v3/conditions">Conditions</a>
+  <a href="https://pz7cgj4kfv-tech.github.io/v3/confidentialite"><span lang="fr">Confidentialité</span><span lang="en">Privacy</span></a> ·
+  <a href="https://pz7cgj4kfv-tech.github.io/v3/conditions"><span lang="fr">Conditions</span><span lang="en">Terms</span></a>
 </footer>
+<script>
+(function(){
+  var choisi = null;
+  try { choisi = localStorage.getItem('minko.site.langue') } catch (e) { choisi = null }
+  var langue = choisi === 'fr' || choisi === 'en' ? choisi : ((navigator.language || 'fr').toLowerCase().indexOf('fr') === 0 ? 'fr' : 'en');
+  function poser(l) {
+    document.documentElement.lang = l;
+    document.title = l === 'fr' ? 'Minko · le réseau du temps partagé' : 'Minko · the shared-time network';
+    var bs = document.querySelectorAll('.langue button');
+    for (var i = 0; i < bs.length; i++) bs[i].setAttribute('aria-pressed', bs[i].getAttribute('data-l') === l ? 'true' : 'false');
+  }
+  poser(langue);
+  var bs = document.querySelectorAll('.langue button');
+  for (var i = 0; i < bs.length; i++) bs[i].addEventListener('click', function(){
+    var l = this.getAttribute('data-l'); poser(l);
+    try { localStorage.setItem('minko.site.langue', l) } catch (e) {}
+  });
+})();
+</script>
 </body>
 </html>
